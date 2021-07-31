@@ -8,4 +8,6 @@ teprop=$(xinput list-props $tpadid | grep 'Tapping Enabled' | head -1 | awk {'pr
 dwtprop=$(xinput list-props $tpadid | grep 'Disable While Typing' | head -1 | awk {'print $6'} | cut -d "(" -f2 | cut -d")" -f1)
 
 xinput set-prop $tpadid $teprop 1
+echo 'Set Tapping Enabled = 1'
 xinput set-prop $tpadid $dwtprop 0
+echo 'Set Disable While Typing = 0'
